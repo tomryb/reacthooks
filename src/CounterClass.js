@@ -10,15 +10,15 @@ class Counter extends Component {
     })
 
     componentDidMount() {
-        // console.log("Mount");
+        console.log("Mount");
     }
 
     componentDidUpdate() {
-        // console.log("Update");
+        console.log("Update");
     }
 
     componentWillUnmount() {
-        // console.log("Will unmount")
+        console.log("Will unmount")
     }
 
     render() {

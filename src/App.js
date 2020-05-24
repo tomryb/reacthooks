@@ -5,7 +5,8 @@ import CounterFunction from './CounterFunction';
 import WindowResize from './WindowResize';
 import Header from './Header';
 import DisplayData from './DisplayData';
-import CounterReducer from './CounterReducer';
+import CounterReduced from './CounterReduced';
+import Users from './DisplayDataReduced';
 function App() {
   return (
     <div className="App">
@@ -14,7 +15,8 @@ function App() {
       <CounterFunction></CounterFunction>
       <WindowResize></WindowResize>
       <DisplayData></DisplayData>
-      <CounterReducer></CounterReducer>
+      <CounterReduced></CounterReduced>
+      <Users></Users>
     </div>
   );
 }
