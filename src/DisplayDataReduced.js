@@ -1,8 +1,10 @@
-import React, { useReducer, useEffect } from "react";
-import {INITIAL_STATE, USERS_ACTION_TYPES, usersReducer} from "./Reducer"
+import React, { useReducer, useEffect, useContext } from "react";
+import { INITIAL_STATE, USERS_ACTION_TYPES, usersReducer } from "./Reducer"
+import { UserContext } from './App';
 
-function Users() {
+function DisplayDataReduced(props) {
     const [usersState, dispatch] = useReducer(usersReducer, INITIAL_STATE);
+    const userEmail = useContext(UserContext)
     useEffect(() => {
         dispatch({ type: USERS_ACTION_TYPES.LOADING });
         //aby sprawdzić czy obsługujemy dobrze errory - zrobić błąd w url
@@ -25,10 +27,12 @@ function Users() {
                     {usersState.isLoading && <div>Ładowanie danych</div>}
                     {usersState.isError && <div>Błąd ładowania danych</div>}
                     {usersState.data.map((hits) => <li key={hits.id}>{hits.name}</li>)}
+                    <li>Obecny użytkownik: {props.mail}</li>
+                    <button onClick={userEmail.login}>Loguj</button>
                 </ul>
             </div>
         </>
     )
 }
 
-export default Users
+export default DisplayDataReduced
