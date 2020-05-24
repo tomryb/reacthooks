@@ -1,24 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-
+import CounterC from './CounterC';
+import CounterF from './CounterF';
+import WindowResize from './WindowResize';
+import Header from './Header';
+import DisplayData from './DisplayData';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header></Header>
+      <CounterC></CounterC>
+      <CounterF></CounterF>
+      <WindowResize></WindowResize>
+      <DisplayData></DisplayData>
     </div>
   );
 }
